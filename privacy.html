@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cortes Privacy Policy</title>
+<style>
+  :root{
+    --bg:#f6f8f7; --surface:#ffffff; --text:#171a19; --muted:#565f5c;
+    --border:#e1e6e3; --accent:#0f8b8d; --mono-chip:#eef2f1;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14181a; --surface:#1b2022; --text:#e8ece9; --muted:#9aa5a1;
+      --border:#2a3133; --accent:#2fd0c2; --mono-chip:#242b2d;
+    }
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+  *{box-sizing:border-box}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:'IBM Plex Sans', system-ui, sans-serif; padding:56px 20px 80px; }
+  .page{ max-width:680px; margin:0 auto; }
+  .eyebrow{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:22px; }
+  .eyebrow .dot{ color:var(--accent); }
+  .chip{ background:var(--mono-chip); color:var(--text); border:1px solid var(--border); border-radius:999px; padding:3px 10px; font-size:11px; }
+  h1{ font-family:'Source Serif 4', Georgia, serif; font-weight:700; font-size:clamp(32px,6vw,44px); line-height:1.1; margin:0 0 10px; }
+  .updated{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--muted); margin:0 0 36px; }
+  .lede{ font-size:18px; line-height:1.6; margin:0 0 40px; padding-bottom:36px; border-bottom:1px solid var(--border); }
+  section{ margin:0 0 36px; }
+  h2{ font-family:'Source Serif 4', Georgia, serif; font-weight:600; font-size:22px; margin:0 0 12px; }
+  p{ line-height:1.7; margin:0 0 14px; }
+  ul{ margin:0 0 14px; padding-left:22px; line-height:1.7; }
+  li{ margin-bottom:6px; }
+  .label{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:6px; }
+  table{ width:100%; border-collapse:collapse; margin:4px 0 14px; font-size:14.5px; }
+  th,td{ text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  th{ font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); font-weight:500; }
+  .tbl-wrap{ overflow-x:auto; }
+  footer{ margin-top:48px; padding-top:24px; border-top:1px solid var(--border); font-size:13.5px; color:var(--muted); }
+  a{ color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow"><span>cortes</span><span class="dot">&middot;</span><span>Privacy Policy</span><span class="chip">v1.0</span></div>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated — November 18, 2026</p>
+
+  <p class="lede">Cortes is a personal automation tool that turns moments from a Kick livestream into
+  short captioned clips and posts them to the operator's own TikTok account. This page explains what
+  data it touches, why, and where it lives.</p>
+
+  <section>
+    <span class="label">01 — What this is</span>
+    <h2>A single-operator tool, not a public service</h2>
+    <p>Cortes runs on hardware owned and operated by the app's developer. It is not a public website
+    or app that other people sign up for — there are no end-user accounts. The only TikTok account it
+    ever connects to is the one the operator explicitly authorizes via TikTok's own OAuth screen.</p>
+  </section>
+
+  <section>
+    <span class="label">02 — Data it processes</span>
+    <h2>What passes through the pipeline</h2>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Data</th><th>Source</th><th>Purpose</th><th>Stored?</th></tr>
+      <tr><td>Livestream video</td><td>Kick.com (public stream)</td><td>Cut into short clips</td><td>Temporarily, on local disk</td></tr>
+      <tr><td>Public chat messages</td><td>Kick.com chat (public)</td><td>Counted and pattern-matched per time window to detect "hype" moments</td><td>Not stored — only a running count</td></tr>
+      <tr><td>Clip transcript</td><td>Generated locally from the clip's audio</td><td>Burn-in captions; draft a title/description</td><td>Alongside the clip, until published</td></tr>
+      <tr><td>TikTok access &amp; refresh tokens</td><td>TikTok OAuth (operator-authorized)</td><td>Publish clips via the TikTok API</td><td>On local disk, never transmitted elsewhere</td></tr>
+    </table>
+    </div>
+    <p>No data broker, ad network, or analytics SDK is integrated anywhere in this pipeline.</p>
+  </section>
+
+  <section>
+    <span class="label">03 — Third parties involved</span>
+    <h2>Who else sees what</h2>
+    <ul>
+      <li><strong>TikTok</strong> receives the finished video file and its caption text at publish time, under the scopes the operator granted during authorization.</li>
+      <li><strong>Anthropic</strong> (Claude API) receives the plain-text transcript of a clip to draft a title, description, and hashtags — never the video file, never chat data, never TikTok tokens.</li>
+      <li><strong>Telegram</strong> receives a short text notification (title/description/hashtags) when a clip is ready, sent to the operator's own private chat with their own bot.</li>
+      <li>No other third party receives any data processed by this tool.</li>
+    </ul>
+  </section>
+
+  <section>
+    <span class="label">04 — Retention &amp; deletion</span>
+    <h2>How long things stick around</h2>
+    <p>Raw stream footage is deleted automatically after a short retention window (by default, two
+    hours). Clips that are discarded (skipped) or already published are kept only as long as the
+    operator chooses to keep them on local disk. TikTok tokens remain stored locally until the
+    operator revokes the app's access from their TikTok account settings.</p>
+  </section>
+
+  <section>
+    <span class="label">05 — Your rights</span>
+    <h2>If this is your content</h2>
+    <p>If you are the Kick streamer whose broadcast this tool processes, or a TikTok user affected by
+    a published clip, you can request removal of a specific clip or correction of this policy at any
+    time using the contact below.</p>
+  </section>
+
+  <footer>
+    Questions or requests about this policy: <a href="mailto:joaoliotti14@gmail.com">joaoliotti14@gmail.com</a>
+    &nbsp;·&nbsp; <a href="./index.html">Back to Cortes</a>
+  </footer>
+</div>
+</body>
+</html>

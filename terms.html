@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cortes Terms of Service</title>
+<style>
+  :root{
+    --bg:#f6f8f7; --surface:#ffffff; --text:#171a19; --muted:#565f5c;
+    --border:#e1e6e3; --accent:#0f8b8d; --mono-chip:#eef2f1;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14181a; --surface:#1b2022; --text:#e8ece9; --muted:#9aa5a1;
+      --border:#2a3133; --accent:#2fd0c2; --mono-chip:#242b2d;
+    }
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+  *{box-sizing:border-box}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:'IBM Plex Sans', system-ui, sans-serif; padding:56px 20px 80px; }
+  .page{ max-width:680px; margin:0 auto; }
+  .eyebrow{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:22px; }
+  .eyebrow .dot{ color:var(--accent); }
+  .chip{ background:var(--mono-chip); color:var(--text); border:1px solid var(--border); border-radius:999px; padding:3px 10px; font-size:11px; }
+  h1{ font-family:'Source Serif 4', Georgia, serif; font-weight:700; font-size:clamp(32px,6vw,44px); line-height:1.1; margin:0 0 10px; }
+  .updated{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--muted); margin:0 0 36px; }
+  .lede{ font-size:18px; line-height:1.6; margin:0 0 40px; padding-bottom:36px; border-bottom:1px solid var(--border); }
+  section{ margin:0 0 36px; }
+  h2{ font-family:'Source Serif 4', Georgia, serif; font-weight:600; font-size:22px; margin:0 0 12px; }
+  p{ line-height:1.7; margin:0 0 14px; }
+  ul{ margin:0 0 14px; padding-left:22px; line-height:1.7; }
+  li{ margin-bottom:6px; }
+  .label{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:6px; }
+  footer{ margin-top:48px; padding-top:24px; border-top:1px solid var(--border); font-size:13.5px; color:var(--muted); }
+  a{ color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow"><span>cortes</span><span class="dot">&middot;</span><span>Terms of Service</span><span class="chip">v1.0</span></div>
+  <h1>Terms of Service</h1>
+  <p class="updated">Last updated — November 18, 2026</p>
+
+  <p class="lede">Cortes is a single-operator automation pipeline: it watches one Kick livestream,
+  cuts highlight clips, captions them, and posts them to one TikTok account that its operator
+  controls. These terms describe that scope.</p>
+
+  <section>
+    <span class="label">01 — Scope</span>
+    <h2>Who this covers</h2>
+    <p>This tool has one operator and connects to one TikTok account, authorized directly by that
+    operator through TikTok's own login screen. It is not distributed to, or used on behalf of, the
+    general public, and these terms are not a consumer agreement for a multi-tenant product.</p>
+  </section>
+
+  <section>
+    <span class="label">02 — What the integration does</span>
+    <h2>TikTok Login Kit &amp; Content Posting API</h2>
+    <ul>
+      <li>Requests a one-time authorization from the operator's TikTok account (Login Kit).</li>
+      <li>Uses the resulting access token solely to upload and publish video clips, either as a
+      draft to the account's TikTok inbox or as a direct post, via the Content Posting API.</li>
+      <li>Never posts, comments, follows, or messages on the operator's behalf outside of publishing
+      the clips described above.</li>
+      <li>Never accesses another TikTok user's account or content.</li>
+    </ul>
+  </section>
+
+  <section>
+    <span class="label">03 — Content &amp; rights</span>
+    <h2>Source material</h2>
+    <p>Clips are sourced from a Kick livestream the operator has the streamer's authorization to
+    repurpose and publish. The operator is responsible for that underlying authorization; this tool
+    only automates the technical steps of cutting, captioning, and publishing.</p>
+  </section>
+
+  <section>
+    <span class="label">04 — Availability</span>
+    <h2>No uptime guarantee</h2>
+    <p>This is a personal, self-hosted tool. It is offered with no warranty of availability, accuracy,
+    or fitness for any particular purpose, and may be modified, paused, or shut down at any time by
+    its operator.</p>
+  </section>
+
+  <section>
+    <span class="label">05 — Changes</span>
+    <h2>Updates to these terms</h2>
+    <p>If the tool's scope changes — for example, connecting to additional accounts or platforms —
+    this page will be updated accordingly before that change goes live.</p>
+  </section>
+
+  <footer>
+    Questions about these terms: <a href="mailto:joaoliotti14@gmail.com">joaoliotti14@gmail.com</a>
+    &nbsp;·&nbsp; <a href="./index.html">Back to Cortes</a>
+  </footer>
+</div>
+</body>
+</html>
